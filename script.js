@@ -64,12 +64,22 @@ const startBtn = document.getElementById('startTimer');
 const pauseBtn = document.getElementById('pauseTimer');
 const workoutTimeEl = document.getElementById('workoutTime');
 
-// Format waktu: "X min Y sec"
+// Update formatTime function
 function formatTime(totalSeconds) {
   const mins = Math.floor(totalSeconds / 60);
   const secs = totalSeconds % 60;
-  return `${mins} min ${secs} sec`;
+  
+  // Format minimalis untuk mobile: "45m" atau "1h 5m"
+  if (mins < 60) {
+    return `${mins}m`;
+  } else {
+    const hours = Math.floor(mins / 60);
+    const remainingMins = mins % 60;
+    return `${hours}h ${remainingMins}m`;
+  }
 }
+
+// Update di semua bagian yang menggunakan formatTime()
 
 // Update timer
 function updateTimer() {
