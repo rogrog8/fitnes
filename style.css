@@ -69,31 +69,70 @@ body {
     color: var(--primary);
 }
 
+/* Progress Summary - Mobile Friendly */
+.progress-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.progress-card {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.progress-icon {
+  font-size: 1.2rem;
+}
+
+.progress-card h3 {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.progress-card p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #6c5ce7;
+}
+
 /* Timer Controls */
 .timer-controls {
   display: flex;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 5px;
+  margin-top: 5px;
 }
 
 .timer-btn {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 20px;
-  background: #f1f1f1;
-  cursor: pointer;
-  font-size: 0.8rem;
-  transition: all 0.3s;
+  padding: 5px 8px;
+  font-size: 0.7rem;
 }
 
-.timer-btn:hover {
-  background: #6c5ce7;
-  color: white;
-}
-
-.timer-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .glass-container {
+    padding: 15px;
+  }
+  
+  .app-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .progress-card {
+    padding: 10px;
+  }
+  
+  .progress-card p {
+    font-size: 1rem;
+  }
 }
 
 /* Form Styles */
