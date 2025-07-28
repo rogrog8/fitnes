@@ -112,8 +112,27 @@ body {
 }
 
 .timer-btn {
-  padding: 5px 8px;
-  font-size: 0.7rem;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timer-btn:hover {
+  background: #6c5ce7;
+  color: white;
+}
+
+.timer-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Responsive Adjustments */
