@@ -55,14 +55,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===== [1] STOPWATCH SYSTEM ===== //
+// Pastikan kode timer ini ada di script.js
 let timerInterval;
 let seconds = 0;
 let isRunning = false;
 
-// Elements
 const startBtn = document.getElementById('startTimer');
 const pauseBtn = document.getElementById('pauseTimer');
 const workoutTimeEl = document.getElementById('workoutTime');
+
+startBtn.addEventListener('click', () => {
+  if (!isRunning) {
+    isRunning = true;
+    timerInterval = setInterval(updateTimer, 1000);
+    startBtn.disabled = true;
+    pauseBtn.disabled = false;
+  }
+});
+
+pauseBtn.addEventListener('click', () => {
+  clearInterval(timerInterval);
+  isRunning = false;
+  startBtn.disabled = false;
+  pauseBtn.disabled = true;
+});
+
+function updateTimer() {
+  seconds++;
+  workoutTimeEl.textContent = formatTime(seconds);
+}
 
 // Update formatTime function
 function formatTime(totalSeconds) {
